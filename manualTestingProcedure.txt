@@ -1,0 +1,190 @@
+Test Scenarios for Manual Testing
+
+Test 1
+Title: New Employee signs in using their email address and books a desk.
+Summary: Check that a new employee can sign in and book a desk for the same day.
+Pre-reqs.: 
+* Access to the Desk Booking System sign in page.
+* Email address not used in the system before.
+* Generated password for that employee.
+
+Steps:
+1. Enter the email address and password from the pre-reqs into the email and password fields.
+Expected result: 
+Email address and password are accepted in the input fields.
+
+2. Click ‘Login’.
+Expected result: 
+Email address and password are verified successfully and the ‘Desk Booking’ page is shown.
+
+3. Check the Desk Booking page has:
+- The current date selected.
+- All desks in the office with their desk number.
+- Any booked desk is shown with the desk being red.
+- Any desk booked by the current employee is shown with the desk being green.
+- Date navigation calendar with the current date selected.
+- My Bookings link/tab.
+- Email address of the employee who logged in.
+Expected result: 
+The Desk Booking page is shown with the correct details.
+
+4. Select a free desk.
+Expected result: 
+Desk is selected.
+
+5. Click ‘Book’.
+Expected result: 
+Desk now shows as booked.
+
+6. Check email of the employee from the pre-reqs.
+Expected result: 
+Confirmation email is received with the desk booking details, desk number and date.
+
+7. Click ‘My Bookings’ on the ‘Desk Booking’ page.
+Expected result: 
+Booking details for the booking are shown in the table.
+
+
+
+Test 2
+Title: Log in and out as two different employees.
+Summary: Check that employees can log in and out.
+Pre-reqs.: 
+* Access to the Desk Booking System login page.
+* Email address and generated password for two employees.
+* Both employees have already booked desks previously.
+
+Steps:
+1. Enter the email address and password from the pre-reqs for one of the employees into the email and password fields.
+Expected result: 
+Email address and password are accepted in the input fields.
+
+2. Click ‘Sign in’.
+Expected result: 
+Email address and password are verified successfully and the employee is taken to the ‘Desk Booking’ page.
+
+3. Navigate to the My Bookings and check the previously booked desks for the logged in employee are shown on the Desk Booking page.
+Expected result: 
+Only the signed in employees booked desks are shown on the My Bookings page.
+
+4. Click the employee email in the top right corner and select ‘Log out’.
+Expected result: 
+‘Log out’ button is shown and after clicking the ‘Desk Booking Login’ page is shown.
+
+5. Enter the email address and password from the pre-reqs for the second employee into the email and password fields and click ‘Login’.
+Expected result: 
+Email address and password are accepted and are verified successfully then the ‘Desk Booking’ page is shown.
+
+6. Navigate to the My Bookings and check the previously booked desks for the logged in second employee are shown on the Desk Booking page.
+Expected result: 
+Only the logged in employees booked desks are shown on the My Bookings page.
+
+
+
+Test 3
+Title: Existing employee books a desk for a different day.
+Summary: Check that employees can log in and out.
+Pre-reqs.: 
+* Access to the Desk Booking System login page.
+* Email address and generated password for an employee.
+* Employee has already booked a desk before.
+
+Steps:
+1. Enter the email address and password from the pre-reqs for the employee into the email and password fields then slick ‘Sign in’.
+Expected result: 
+Email address and password are accepted and verified successfully and the ‘Desk Booking’ page is shown.
+
+2. Change the date in the calendar to a different one.
+Expected result: 
+Date in the calendar is updated and the desks shown are updated to match the selected dates available desks.
+
+3. Select a free desk.
+Expected result: 
+Desk is selected.
+
+4. Click ‘Book’.
+Expected result: 
+Desk now shows as booked.
+
+5. Check email of the employee from the pre-reqs.
+Expected result: 
+Confirmation email is received with the desk booking details, desk number and date.
+
+6. Click ‘My Bookings’ on the ‘Desk Booking’ page.
+Expected result: 
+Booking details for the booking are shown in the table.
+
+
+
+Test 4
+Title: Employee tries to book a desk for the same day.
+Summary: Check an employee cannot book a desk on the same day they already have a confirmed desk booking.
+Pre-reqs.: 
+* Access to the Desk Booking System login page.
+* Email address and generated password for an employee.
+* Employee has a desk already booked for the current or future date.
+
+Steps:
+1. Enter the email address and password from the pre-reqs for the employee into the email and password fields then slick ‘Sign in’.
+Expected result: 
+Email address and password are accepted and verified successfully and the ‘Desk Booking’ page is shown.
+2. Change the date in the calendar to the same day as the employee from the pre-reqs booked desk.
+Expected result: 
+Date in the calendar is updated and the desks shown are updated to match the selected dates available desks.
+3. Click on a free desk.
+Expected result: 
+Only the desk already booked can be selected, all other desks are not selectable.
+
+
+
+Test 5
+Title: Employee tries to book a desk that is already booked.
+Summary: Check an employee cannot book a desk that is already booked.
+Pre-reqs.: 
+* Access to the Desk Booking System login page.
+* Email address and generated password for an employee.
+* Have booked desks by other employees for the current day.
+
+Steps:
+1. Enter the email address and password from the pre-reqs for the employee into the email and password fields then slick ‘Sign in’.
+Expected result: 
+Email address and password are accepted and verified successfully and the ‘Desk Booking’ page is shown.
+
+2. Click on any booked desk from the pre-reqs.
+Expected result: 
+Only the free desks can be selected, all booked desks are not selectable.
+
+
+
+Test 6
+Title: Employee cancels a booking.
+Summary: Check that employees can cancel a booking from the Bookings and My Bookings pages.
+Pre-reqs.: 
+* Access to the Desk Booking System login page.
+* Email address and generated password for an employee.
+* Employee has already booked a desk for current and next day.
+
+Steps:
+1. Enter the email address and password from the pre-reqs for the employee into the email and password fields then slick ‘Sign in’.
+Expected result: 
+Email address and password are accepted and verified successfully and the ‘Desk Booking’ page is shown.
+
+2. Click ‘Cancel Booking’ below the calendar.
+Expected result:
+Booking is cancelled.
+
+3. Navigate to the My Bookings and check that the booking that was just cancelled is no longer there.
+Expected result:
+No booking for current date shown.
+
+4. Check the booking for the next day from the pre-reqs.
+Expected result:
+Number of selected items is shown with a ‘Delete’ button.
+
+5. Click the ‘Delete’ button.
+Expected result:
+Booking is cancelled and removed from the list of My Bookings.
+
+6. Navigate to the Bookings page and select tomorrows date.
+Expected result:
+Employee has no bookings for that day.
