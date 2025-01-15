@@ -10,6 +10,9 @@ Desk bookings
 
 [Sean Sexton](https://github.com/sean-sexton-gif)
 
+# Background Context
+This is a Test Driven Development (TDD) Sandbox Project created as part of the TDD training provided by [Valentina Jemuović](https://www.linkedin.com/in/valentinajemuovic) through the [Optivem Journal](https://journal.optivem.com/). The aim is to safely practice applying TDD to a legacy code project. This involves setting up an automated build pipeline and then retroactively adding in automated tests following TDD.
+
 # Use Cases: 
 1. Employee books a desk.
 
