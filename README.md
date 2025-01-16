@@ -79,7 +79,7 @@ https://github.com/3T-Operations-Team/desk-bookings-be.git
 https://github.com/3T-Operations-Team/desk-bookings-system-tests.git
 
 # Project Boards
-https://github.com/orgs/3T-Operations-Team/projects/1/views/1
+https://github.com/orgs/3T-Operations-Team/projects/4/views/1
 
 # Manual Testing
 https://github.com/3T-Operations-Team/desk-bookings-system/blob/master/manualTestingProcedure.txt
