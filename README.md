@@ -97,4 +97,4 @@ https://github.com/3T-Operations-Team/desk-bookings-system/blob/master/manualTes
 
 |                    |  Acceptance Stage    | UAT Stage            |  Production Stage     |
 | ------------------ | -------------------- | -------------------- |-----------------------|
-| **System**         | [![Name](badge URL) | [![Name](badge URL) | [![Name](badge URL) |
+| **System**         | [![Name](badge URL) | [![Run UAT Stage](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/uat-stage.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/uat-stage.yml) | [![Run Production Stage](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/production.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/production.yml) |
