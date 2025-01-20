@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
+  # todo : pick up an acceptance related tag before processing for uat?
+  # if it is not available then acceptance is not yet available.
   run-uat-deploy:
     uses: ./.github/workflows/release-stage.yml
     secrets: inherit
