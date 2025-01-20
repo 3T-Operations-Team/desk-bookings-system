@@ -26,6 +26,8 @@ jobs:
       EB_ENV_FE: ${{ vars.EB_ENV_ACCEPTANCE_FE }}
       EB_ENV_BE: ${{ vars.EB_ENV_ACCEPTANCE_BE }}
 
+  # todo : release external system stub
+  # todo : if want to reuse this workflow : have a check to release external system test instances in case of E2e env
   run-smoke-test:
     needs:
       - run-deploy-in-environment
