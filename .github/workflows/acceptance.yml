@@ -1,0 +1,11 @@
+# this stage is run before uat-stage and production stage
+# in an acceptance environment.
+#
+# 1. pass input env var
+#
+# 2. trigger Release System on this environment
+#    Release External System Stubs (this is a placeholder step, no actions at the moment)
+#    Checkout System Test Repository
+#    Run Smoke Tests
+#    Run Acceptance Tests
+# 3. Tag the
