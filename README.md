@@ -88,13 +88,13 @@ https://github.com/3T-Operations-Team/desk-bookings-system/blob/master/manualTes
 
 ## Component Stages
 
-| Component          | Commit Stage         |  Acceptance Stage     |  UAT Stage            |  Production Stage     |
-| ------------------ | ----------------------- | -------------------- | ----------------------- | ----------------------- |
-| **Frontend**        | [![Commit Frontend Pipeline](https://github.com/3T-Operations-Team/desk-bookings-fe/actions/workflows/commit-stage.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-fe/actions/workflows/commit-stage.yml) | [[![Name](badge URL) | [![Name](badge URL) | [![Name](badge URL) |
-| **Backend**    | [![Commit Backend pipeline](https://github.com/3T-Operations-Team/desk-bookings-be/actions/workflows/commit-stage.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-be/actions/workflows/commit-stage.yml) | [![Name](badge URL) | [![Name](badge URL) | [![Name](badge URL) |
+| Component          | Commit Stage         |
+| ------------------ | ----------------------- |
+| **Frontend**        | [![Commit Frontend Pipeline](https://github.com/3T-Operations-Team/desk-bookings-fe/actions/workflows/commit-stage.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-fe/actions/workflows/commit-stage.yml) |
+| **Backend**    | [![Commit Backend pipeline](https://github.com/3T-Operations-Team/desk-bookings-be/actions/workflows/commit-stage.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-be/actions/workflows/commit-stage.yml) |
 
 ## System Stages
 
 |                    |  Acceptance Stage    | UAT Stage            |  Production Stage     |
 | ------------------ | -------------------- | -------------------- |-----------------------|
-| **System**         | [![Name](badge URL) | [![Run UAT Stage](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/uat-stage.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/uat-stage.yml) | [![Run Production Stage](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/production.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/production.yml) |
+| **System**         | [![Name](badge URL) | [![Run UAT Stage](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/uat-stage.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/uat-stage.yml) | [![Run Production Stage](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/production.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/production.yml) |
