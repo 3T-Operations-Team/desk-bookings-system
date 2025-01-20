@@ -10,6 +10,7 @@
 #    Run Acceptance Tests
 # 3. Tag the
 
+# todo : move to test repo
 name: Run Acceptance Stage
 
 on:
@@ -44,3 +45,5 @@ jobs:
     with:
       EB_ENV: ${{ vars.EB_ENV_ACCEPTANCE_FE }}
     secrets: inherit
+  add-acceptance-stage-tag:
+
