@@ -13,7 +13,8 @@
 name: Run Acceptance Stage
 
 on:
-  #todo : make it a cron job that runs every 1 hours
+  schedule:
+    - cron: "0 6,18 * * 1-5"
   workflow_dispatch:
 
 jobs:
