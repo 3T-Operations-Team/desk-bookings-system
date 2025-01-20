@@ -9,7 +9,7 @@ jobs:
     uses: ./.github/workflows/release-stage.yml
     secrets: inherit
     with:
-      EB_APP_BE: ${{ vars.EB_UAT_APP }}
-      EB_APP_FE: ${{ vars.EB_UAT_APP }}
-      EB_ENV_FE: ${{ vars.EB_UAT_ENV_FE }}
-      EB_ENV_BE: ${{ vars.EB_UAT_ENV_BE }}
+      EB_APP_BE: ${{ vars.EB_APP_BE }}
+      EB_APP_FE: ${{ vars.EB_APP_FE }}
+      EB_ENV_FE: ${{ vars.EB_ENV_UAT_FE }}
+      EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
