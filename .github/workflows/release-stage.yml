@@ -37,7 +37,6 @@ jobs:
       EB_ENVIRONMENT: ${{ inputs.EB_ENV_FE }}
       EB_APP: ${{ inputs.EB_APP_FE }}
       IMAGE_PATH: ${{ vars.IMAGE_PATH_FE }}:main
-  # todo: checkout to test before running smoke test or move run-smoke-test yml to that repo
   run-smoke-test:
     needs:
       - run-frontend-deploy
