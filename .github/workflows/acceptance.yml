@@ -46,3 +46,11 @@ jobs:
       EB_ENV: ${{ vars.EB_ENV_ACCEPTANCE_FE }}
     secrets: inherit
 
+  on-acceptance-success:
+    needs:
+      - run-acceptance-test
+    uses: 3T-Operations-Team/desk-bookings-fe/.github/workflows/update-tag.yml@main
+    with:
+      image_tag: "latest"
+      new_tag: "accept"
+    secrets: inherit
