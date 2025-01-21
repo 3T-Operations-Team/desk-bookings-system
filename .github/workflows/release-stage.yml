@@ -18,7 +18,11 @@ on:
       EB_ENV_BE:
         type: string
         required: true
-      
+      TAG:
+        type: string
+        required: true
+        default: latest
+
 jobs:
   # TODO : add environment here?
   run-backend-deploy:
@@ -27,7 +31,7 @@ jobs:
     with:
       EB_ENVIRONMENT: ${{ inputs.EB_ENV_BE }}
       EB_APP: ${{ inputs.EB_APP_BE }}
-      IMAGE_PATH: ${{ vars.IMAGE_PATH_BE }}:latest # this never changes.
+      IMAGE_PATH: ${{ vars.IMAGE_PATH_BE }}:${{ inputs.TAG }}
 
   run-frontend-deploy:
     needs: run-backend-deploy
@@ -36,4 +40,4 @@ jobs:
     with:
       EB_ENVIRONMENT: ${{ inputs.EB_ENV_FE }}
       EB_APP: ${{ inputs.EB_APP_FE }}
-      IMAGE_PATH: ${{ vars.IMAGE_PATH_FE }}:latest
+      IMAGE_PATH: ${{ vars.IMAGE_PATH_FE }}:${{ inputs.TAG }}
