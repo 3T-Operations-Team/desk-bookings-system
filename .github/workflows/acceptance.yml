@@ -51,6 +51,6 @@ jobs:
       - run-acceptance-test
     uses: 3T-Operations-Team/desk-bookings-fe/.github/workflows/update-tag.yml@main
     with:
-      image_tag: latest
-      new_tag: accept
+      image-tag: "latest"
+      new-tag: "accept"
     secrets: inherit
