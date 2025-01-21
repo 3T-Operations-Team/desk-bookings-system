@@ -20,7 +20,7 @@ on:
         required: true
       TAG:
         type: string
-        required: true
+        required: false
         default: latest
 
 jobs:
