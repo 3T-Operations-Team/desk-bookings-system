@@ -84,6 +84,12 @@ https://github.com/orgs/3T-Operations-Team/projects/4/views/1
 # Manual Testing
 https://github.com/3T-Operations-Team/desk-bookings-system/blob/master/manualTestingProcedure.txt
 
+# Pipeline Tool
+Github Actions
+
+# Docker Registry
+GitHub Container Registry
+
 # Pipeline Dashboard
 
 ## Component Stages
