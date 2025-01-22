@@ -1,12 +1,9 @@
 name: Run UAT Stage
 
 on:
-  #todo : make it a cron job that runs every n hours
   workflow_dispatch:
 
 jobs:
-  # todo : pick up an acceptance related tag before processing for uat?
-  # if it is not available then acceptance is not yet available.
   run-uat-deploy:
     uses: ./.github/workflows/release-stage.yml
     secrets: inherit
@@ -16,3 +13,23 @@ jobs:
       EB_ENV_FE: ${{ vars.EB_ENV_UAT_FE }}
       EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
       TAG: 'draft'
+
+  # presume that some test are run from manual testing and approve a tag
+  approve-pre-release-tag-be:
+    needs:
+      - run-uat-deploy
+    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/update-tag.yml@main
+    with:
+      image-tag: draft
+      new-tag: pre-release
+      IMAGE_NAME: ghcr.io/3t-operations-team/desk-bookings-be
+    secrets: inherit
+  approve-pre-release-tag-fe:
+    needs:
+      - run-uat-deploy
+    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/update-tag.yml@main
+    with:
+      image-tag: draft
+      new-tag: pre-release
+      IMAGE_NAME: ghcr.io/3t-operations-team/desk-bookings-fe
+    secrets: inherit
