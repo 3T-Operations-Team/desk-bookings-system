@@ -13,3 +13,4 @@ jobs:
       EB_APP_BE: ${{ vars.EB_APP_BE }}
       EB_ENV_FE: ${{ vars.EB_ENV_PROD_FE }}
       EB_ENV_BE: ${{ vars.EB_ENV_PROD_BE }}
+      TAG: 'pre-release'
