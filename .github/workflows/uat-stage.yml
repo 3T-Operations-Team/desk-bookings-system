@@ -15,3 +15,4 @@ jobs:
       EB_APP_FE: ${{ vars.EB_APP_FE }}
       EB_ENV_FE: ${{ vars.EB_ENV_UAT_FE }}
       EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
+      TAG: 'draft'
