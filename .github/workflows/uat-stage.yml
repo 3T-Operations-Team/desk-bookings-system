@@ -50,10 +50,11 @@ jobs:
         with:
           repository: 3T-Operations-Team/desk-bookings-fe
           path: desk-bookings-fe
+
       - name: Create or Update Release
         working-directory: desk-bookings-fe
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
         run: |
             TAG_NAME="${{ github.event.inputs.rc-version }}"
             RELEASE_NAME="Release ${TAG_NAME}"
