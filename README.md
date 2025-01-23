@@ -90,6 +90,15 @@ Github Actions
 # Docker Registry
 GitHub Container Registry
 
+# Environments
+Acceptance: http://ops-desk-bookings-acceptance-fe.us-east-1.elasticbeanstalk.com/
+
+E2E: http://ops-desk-bookings-e2e-fe.us-east-1.elasticbeanstalk.com/
+
+UAT: http://ops-desk-bookings-uat-fe.us-east-1.elasticbeanstalk.com/
+
+Prod: http://ops-desk-bookings-prod-fe.us-east-1.elasticbeanstalk.com/
+
 # Pipeline Dashboard
 
 ## Component Stages
