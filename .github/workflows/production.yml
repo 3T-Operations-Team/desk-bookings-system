@@ -1,5 +1,5 @@
 # production stage deployment workflow after successful
-name: Run Production Stage
+name: Production Stage
 
 on:
   workflow_dispatch:
