@@ -9,32 +9,45 @@ on:
         description: "Enter accepted version to deploy in UAT"
 
 jobs:
-  run-uat-deploy:
-    uses: ./.github/workflows/release-stage.yml
-    secrets: inherit
-    with:
-      EB_APP_BE: ${{ vars.EB_APP_BE }}
-      EB_APP_FE: ${{ vars.EB_APP_FE }}
-      EB_ENV_FE: ${{ vars.EB_ENV_UAT_FE }}
-      EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
-      TAG: ${{ inputs.acceptance-version }}
-
-  # presume that some test are run from manual testing and approve a tag
-  approve-pre-release-tag-be:
-    needs:
-      - run-uat-deploy
-    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/update-tag.yml@main
-    with:
-      image-tag: ${{ inputs.acceptance-version }}
-      new-tag: pre-release
-      IMAGE_NAME: ghcr.io/3t-operations-team/desk-bookings-be
-    secrets: inherit
-  approve-pre-release-tag-fe:
-    needs:
-      - run-uat-deploy
-    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/update-tag.yml@main
-    with:
-      image-tag: ${{ inputs.acceptance-version }}
-      new-tag: pre-release
-      IMAGE_NAME: ghcr.io/3t-operations-team/desk-bookings-fe
-    secrets: inherit
+#  run-uat-deploy:
+#    uses: ./.github/workflows/release-stage.yml
+#    secrets: inherit
+#    with:
+#      EB_APP_BE: ${{ vars.EB_APP_BE }}
+#      EB_APP_FE: ${{ vars.EB_APP_FE }}
+#      EB_ENV_FE: ${{ vars.EB_ENV_UAT_FE }}
+#      EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
+#      TAG: ${{ inputs.acceptance-version }}
+#
+#  # presume that some test are run from manual testing and approve a tag
+#  approve-pre-release-tag-be:
+#    needs:
+#      - run-uat-deploy
+#    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/update-tag.yml@main
+#    with:
+#      image-tag: ${{ inputs.acceptance-version }}
+#      new-tag: pre-release
+#      IMAGE_NAME: ghcr.io/3t-operations-team/desk-bookings-be
+#    secrets: inherit
+#  approve-pre-release-tag-fe:
+#    needs:
+#      - run-uat-deploy
+#    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/update-tag.yml@main
+#    with:
+#      image-tag: ${{ inputs.acceptance-version }}
+#      new-tag: pre-release
+#      IMAGE_NAME: ghcr.io/3t-operations-team/desk-bookings-fe
+#    secrets: inherit
+  test-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          repository: 3T-Operations-Team/desk-bookings-fe
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.inputs.tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
