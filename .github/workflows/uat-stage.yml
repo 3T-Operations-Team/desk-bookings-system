@@ -47,7 +47,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+        with:
+          repository: 3T-Operations-Team/desk-bookings-fe
+          path: desk-bookings-fe
       - name: Create or Update Release
+        working-directory: desk-bookings-fe
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
