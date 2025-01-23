@@ -49,28 +49,31 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-        with:
-          repository: 3T-Operations-Team/desk-bookings-fe
-      - name: Create or Update Release
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Create or Update Release
+#        env:
+#            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run: |
+#            TAG_NAME="${{ github.event.inputs.rc-version }}"
+#            RELEASE_NAME="Release ${TAG_NAME}"
+#            BODY="Automatic release for tag ${TAG_NAME}"
+#
+#            # Check if release exists for the tag
+#            if gh release view "$TAG_NAME" > /dev/null 2>&1; then
+#            echo "Release $TAG_NAME exists. Updating..."
+#            gh release edit "$TAG_NAME" --title "$RELEASE_NAME" --notes "$BODY"
+#            else
+#            echo "Creating release $TAG_NAME"
+#            gh release create "$TAG_NAME" --title "$RELEASE_NAME" --notes "$BODY"
+#            fi
+      - name: Create Release.txt
         run: |
-            TAG_NAME="${{ github.event.inputs.rc-version }}"
-            RELEASE_NAME="Release ${TAG_NAME}"
-            BODY="Automatic release for tag ${TAG_NAME}"
-            
-            # Check if release exists for the tag
-            if gh release view "$TAG_NAME" > /dev/null 2>&1; then
-            echo "Release $TAG_NAME exists. Updating..."
-            gh release edit "$TAG_NAME" --title "$RELEASE_NAME" --notes "$BODY"
-            else
-            echo "Creating release $TAG_NAME"
-            gh release create "$TAG_NAME" --title "$RELEASE_NAME" --notes "$BODY"
-            fi
-
+            echo "This is a test release" >> Release.txt
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.inputs.rc_version }}
           body: "Automatic release for ${{ github.event.inputs.rc_version }}"
+          files: Release.txt
+          repository: 3T-Operations-Team/desk-bookings-fe
+          token: '${{ secrets.GITHUB_TOKEN }}'
 
