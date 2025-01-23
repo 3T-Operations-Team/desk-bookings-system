@@ -71,8 +71,8 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.event.inputs.rc_version }}
-          body: "Automatic release for ${{ github.event.inputs.rc_version }}"
+          tag_name: ${{ inputs.rc_version }}
+          body: "Automatic release for ${{ inputs.rc_version }}"
           files: Release.txt
           repository: 3T-Operations-Team/desk-bookings-fe
           token: '${{ secrets.GITHUB_TOKEN }}'
