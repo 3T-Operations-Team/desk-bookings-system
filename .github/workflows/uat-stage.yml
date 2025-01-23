@@ -1,4 +1,4 @@
-name: Run UAT Stage
+name: UAT Stage
 
 on:
   workflow_dispatch:
