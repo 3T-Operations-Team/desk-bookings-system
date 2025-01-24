@@ -44,7 +44,9 @@ As an Employee I must be able to see what desks are currently available.
 - Once the date is chosen the Employee must be able to see available desks.
 
 # External systems
-1. Email sending service - [SendGrid](https://sendgrid.com/)
+1. Email sending service - [SendGrid](https://sendgrid.com/). e2e, UAT and production environemnts use sendgrid test plan credentials. Host and API key are set via the following backend environment variables: 
+- `SENDGRID_HOST` - default value is `api.sendgrid.com`
+- `SENDGRID_KEY` - needs to be provided
 2. System clock - saving timestamps (e.g. booking created time)
 
 # System Architecture Style
