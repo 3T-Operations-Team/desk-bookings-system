@@ -44,7 +44,7 @@ As an Employee I must be able to see what desks are currently available.
 - Once the date is chosen the Employee must be able to see available desks.
 
 # External systems
-1. Email sending service - [SendGrid](https://sendgrid.com/). e2e, UAT and production environemnts use sendgrid test plan credentials. Host and API key are set via the following backend environment variables: 
+1. Email sending service - [SendGrid](https://sendgrid.com/). e2e, UAT and production environments use sendgrid test plan credentials. Host and API key are set via the following backend environment variables: 
 - `SENDGRID_HOST` - default value is `api.sendgrid.com`
 - `SENDGRID_KEY` - needs to be provided
 2. System clock - saving timestamps (e.g. booking created time)
@@ -114,4 +114,4 @@ Prod: http://ops-desk-bookings-prod-fe.us-east-1.elasticbeanstalk.com/
 
 |                    |  Acceptance Stage    | UAT Stage            |  Production Stage     |
 | ------------------ | -------------------- | -------------------- |-----------------------|
-| **System**         | [![Run Acceptance Stage](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/acceptance.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/acceptance.yml) | [![Run UAT Stage](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/uat-stage.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/uat-stage.yml) | [![Run Production Stage](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/production.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/production.yml) |
+| **System**         | [![Acceptance Stage](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/acceptance.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system-tests/actions/workflows/acceptance.yml) | [![Run UAT Stage](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/uat-stage.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/uat-stage.yml) | [![Run Production Stage](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/production.yml/badge.svg)](https://github.com/3T-Operations-Team/desk-bookings-system/actions/workflows/production.yml) |
