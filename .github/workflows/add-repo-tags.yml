@@ -1,7 +1,7 @@
 name: Add Repo tag
 on:
   workflow_call:
-    inputs:       
+    inputs:
       to-version:
         type: string
         required : true

@@ -35,6 +35,9 @@ jobs:
 
   # add rc tag
   add-release-tags:
+    needs:
+      - run-smoke-test
+      - run-uat-deploy
     uses: ./.github/workflows/add-repo-tags.yml
     secrets: inherit
     with:
