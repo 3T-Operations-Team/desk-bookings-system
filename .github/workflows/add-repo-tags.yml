@@ -1,14 +1,15 @@
 name: Add Repo tag
 on:
   workflow_call:
-    to-version:
-      type: string
-      required : true
-      description: "Tag to update repo"
-    from-version:
-      type: string
-      required: true
-      description: "Enter accepted version to deploy in UAT"
+    inputs:       
+      to-version:
+        type: string
+        required : true
+        description: "Tag to update repo"
+      from-version:
+        type: string
+        required: true
+        description: "Enter accepted version to deploy in UAT"
 
 jobs:
   approve-pre-release-tag-be:
