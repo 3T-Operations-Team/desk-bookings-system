@@ -7,6 +7,10 @@ on:
         type: string
         required: true
         description: "Enter accepted version to deploy in UAT"
+      pre-release-version:
+        type: string
+        required: true
+        description: "Enter pre-release version starting v* to deploy in UAT(v1.0.0-rc)"
 
 jobs:
   run-uat-deploy:
@@ -19,22 +23,21 @@ jobs:
       EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
       TAG: ${{ inputs.acceptance-version }}
 
-  # presume that some test are run from manual testing and approve a tag
-  approve-pre-release-tag-be:
+  run-smoke-test:
     needs:
       - run-uat-deploy
-    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/update-tag.yml@main
+    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/smoke-test-on-host.yml
     with:
-      image-tag: ${{ inputs.acceptance-version }}
-      new-tag: pre-release
-      IMAGE_NAME: ghcr.io/3t-operations-team/desk-bookings-be
+      EB_ENV: ${{ vars.EB_ENV_UAT_FE }}
+      BE_URL: ${{ vars.EB_ENV_UAT_BE }}
+      SENDGRID_HOST: ${{ vars.SENDGRID_HOST_MOCK }}
     secrets: inherit
-  approve-pre-release-tag-fe:
-    needs:
-      - run-uat-deploy
-    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/update-tag.yml@main
+
+  # add rc tag
+  add-release-tags:
+    uses: ./.github/workflows/add-repo-tags.yml
+    secrets: inherit
     with:
-      image-tag: ${{ inputs.acceptance-version }}
-      new-tag: pre-release
-      IMAGE_NAME: ghcr.io/3t-operations-team/desk-bookings-fe
-    secrets: inherit
+      to-version: ${{inputs.pre-release-version}}
+      from-version: ${{inputs.acceptance-version}}
+
