@@ -40,7 +40,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
         run: |
-          TAG_NAME="${{ github.event.inputs.to-version }}"
+          TAG_NAME="${{ inputs.to-version }}"
           RELEASE_NAME="Release ${TAG_NAME}"
           BODY="Automatic release for tag ${TAG_NAME}"
           
@@ -67,7 +67,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
         run: |
-          TAG_NAME="${{ github.event.inputs.to-version }}"
+          TAG_NAME="${{ inputs.to-version }}"
           RELEASE_NAME="Release ${TAG_NAME}"
           BODY="Automatic release for tag ${TAG_NAME}"
 
