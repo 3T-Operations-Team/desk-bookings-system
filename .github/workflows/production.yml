@@ -3,6 +3,15 @@ name: Production Stage
 
 on:
   workflow_dispatch:
+    inputs:
+      release-version:
+        type: string
+        required: true
+        description: "Enter release version to deploy in Prod"
+      pre-release-version:
+        type: string
+        required: true
+        description: "Enter pre-release version starting v* to pick"
 
 jobs:
   run-production-deploy:
@@ -13,4 +22,13 @@ jobs:
       EB_APP_BE: ${{ vars.EB_APP_BE }}
       EB_ENV_FE: ${{ vars.EB_ENV_PROD_FE }}
       EB_ENV_BE: ${{ vars.EB_ENV_PROD_BE }}
-      TAG: 'pre-release'
+      TAG: ${{ inputs.pre-release-version }}
+  # add rc tag
+  add-release-tags:
+    needs:
+      - run-production-deploy
+    uses: ./.github/workflows/add-repo-tags.yml
+    secrets: inherit
+    with:
+      to-version: ${{inputs.release-version}}
+      from-version: ${{inputs.pre-release-version}}
