@@ -13,15 +13,15 @@ on:
         description: "Enter pre-release version starting v* to deploy in UAT(v1.0.0-rc)"
 
 jobs:
-  run-uat-deploy:
-    uses: ./.github/workflows/release-stage.yml
-    secrets: inherit
-    with:
-      EB_APP_BE: ${{ vars.EB_APP_BE }}
-      EB_APP_FE: ${{ vars.EB_APP_FE }}
-      EB_ENV_FE: ${{ vars.EB_ENV_UAT_FE }}
-      EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
-      TAG: ${{ inputs.acceptance-version }}
+#  run-uat-deploy:
+#    uses: ./.github/workflows/release-stage.yml
+#    secrets: inherit
+#    with:
+#      EB_APP_BE: ${{ vars.EB_APP_BE }}
+#      EB_APP_FE: ${{ vars.EB_APP_FE }}
+#      EB_ENV_FE: ${{ vars.EB_ENV_UAT_FE }}
+#      EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
+#      TAG: ${{ inputs.acceptance-version }}
 
   run-smoke-test:
     needs:
