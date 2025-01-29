@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: 3T-Operations-Team/desk-bookings-fe
-          path: desk-bookings-be
+          path: desk-bookings-fe
 
       - name: Create or Update Release
         working-directory: desk-bookings-fe
@@ -63,7 +63,7 @@ jobs:
           path: desk-bookings-be
 
       - name: Create or Update Release
-        working-directory: desk-bookings-fe
+        working-directory: desk-bookings-be
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
         run: |
