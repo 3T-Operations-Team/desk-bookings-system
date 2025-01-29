@@ -13,31 +13,31 @@ on:
         description: "Enter pre-release version starting v* to deploy in UAT(v1.0.0-rc)"
 
 jobs:
-#  run-uat-deploy:
-#    uses: ./.github/workflows/release-stage.yml
-#    secrets: inherit
-#    with:
-#      EB_APP_BE: ${{ vars.EB_APP_BE }}
-#      EB_APP_FE: ${{ vars.EB_APP_FE }}
-#      EB_ENV_FE: ${{ vars.EB_ENV_UAT_FE }}
-#      EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
-#      TAG: ${{ inputs.acceptance-version }}
+  run-uat-deploy:
+    uses: ./.github/workflows/release-stage.yml
+    secrets: inherit
+    with:
+      EB_APP_BE: ${{ vars.EB_APP_BE }}
+      EB_APP_FE: ${{ vars.EB_APP_FE }}
+      EB_ENV_FE: ${{ vars.EB_ENV_UAT_FE }}
+      EB_ENV_BE: ${{ vars.EB_ENV_UAT_BE }}
+      TAG: ${{ inputs.acceptance-version }}
 
-#  run-smoke-test:
-#    needs:
-#      - run-uat-deploy
-#    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/smoke-test-on-host.yml@main
-#    with:
-#      EB_ENV: ${{ vars.EB_ENV_UAT_FE }}
-#      BE_URL: ${{ vars.EB_ENV_UAT_BE }}
-#      SENDGRID_HOST: ${{ vars.SENDGRID_HOST_MOCK }}
-#    secrets: inherit
+  run-smoke-test:
+    needs:
+      - run-uat-deploy
+    uses: 3T-Operations-Team/desk-bookings-system-tests/.github/workflows/smoke-test-on-host.yml@main
+    with:
+      EB_ENV: ${{ vars.EB_ENV_UAT_FE }}
+      BE_URL: ${{ vars.EB_ENV_UAT_BE }}
+      SENDGRID_HOST: ${{ vars.SENDGRID_HOST_MOCK }}
+    secrets: inherit
 
   # add rc tag
   add-release-tags:
-#    needs:
-#      - run-smoke-test
-#      - run-uat-deploy
+    needs:
+      - run-smoke-test
+      - run-uat-deploy
     uses: ./.github/workflows/add-repo-tags.yml
     secrets: inherit
     with:
