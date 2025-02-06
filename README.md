@@ -10,6 +10,16 @@ Desk bookings
 
 [Sean Sexton](https://github.com/sean-sexton-gif)
 
+# Team Roles
+Developers:
+- Owns the E2E tests, is in charge of writing and maintaining the code inside the Page Objects.
+- Responsible for making E2E tests pass again if failing.
+
+QA Engineers:
+- Write test scenarios from the acceptance criteria, which can then be turned into automated E2E tests.
+- Perform Exploratroy Testing.
+- Identify additional scenarios to add as E2E tests.
+
 # Background Context
 This is a Test Driven Development (TDD) Sandbox Project created as part of the TDD training provided by [Valentina Jemuović](https://www.linkedin.com/in/valentinajemuovic) through the [Optivem Journal](https://journal.optivem.com/). The aim is to safely practice applying TDD to a legacy code project. This involves setting up an automated build pipeline and then retroactively adding in automated tests following TDD.
 
